@@ -32,4 +32,4 @@ COPY --from=go-builder --chown=nobody:nobody /authorizer/build build
 COPY templates templates
 EXPOSE 8080
 USER authorizer
-CMD [ "./build/server" ]
+CMD ./build/server --database_type=postgres --log_level=debug
